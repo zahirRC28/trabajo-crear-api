@@ -62,7 +62,7 @@ const getServicioByid = async(req, res)=> {
 const putServicioByid = async(req, res)=> {
     try {
         //const ServicioActualizado = await Servicio.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        //el update lo que hace es requerir el id y luego el json del body despues actualiza
+        //el update lo que hace es requerir el id y luego el json del body despues el new: truee devuelve el documento actualizado
         const ServicioActualizado = await Servicio.findOneAndUpdate({ id: req.params.id }, req.body, { new: true })
         //console.log(ServicioActualizado);
         return res.status(200).json({
