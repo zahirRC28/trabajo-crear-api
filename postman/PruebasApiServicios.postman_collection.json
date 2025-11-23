@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "5539b6ae-3fcb-494b-9370-79ee9144afab",
+		"name": "PruebasApiServicios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49858571",
+		"_collection_link": "https://zahirrc28-8263673.postman.co/workspace/zahirRC28's-Workspace~c8eb6eab-0fe3-4e72-8f30-9a16a2a73cdd/collection/49858571-5539b6ae-3fcb-494b-9370-79ee9144afab?action=share&source=collection_link&creator=49858571"
+	},
+	"item": [
+		{
+			"name": "Todos los Servicios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/servicios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"servicios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener servicio id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/servicio/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"servicio",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar servicio id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"actualizar sistema de seguridad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/servicio/actualizar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"servicio",
+						"actualizar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear servicio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3\",\r\n    \"nombre\": \"actualizacion\",\r\n    \"descripcion\": \"aactualizar sistema de seguridad\",\r\n    \"precio\": \"7000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/servicios/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"servicios",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar servicio",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/servicio/borrar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"servicio",
+						"borrar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
