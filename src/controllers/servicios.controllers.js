@@ -31,7 +31,7 @@ const getAllServicios = async(req, res)=> {
             data: Servicios
         })
     } catch (error) {
-        return res.status(404).json({
+        return res.status(500).json({
             ok:false,
             msg: `No se encontraron servicios `
         })
@@ -44,6 +44,12 @@ const getServicioByid = async(req, res)=> {
         //const ServicioEncontrado = await Servicio.findById(req.params.id) con esto buscamos el id nombar
         const ServicioEncontrado = await Servicio.findOne({ id: req.params.id }) //con esto busco mi id personalizada
         //console.log(ServiciosEncontrado);
+        if(!ServicioEncontrado){
+            return res.status(404).json({
+                ok:false,
+                msg: `No se encontro el servicio `
+            })
+        }
         return res.status(200).json({
             ok:true,
             msg: `este es el servicio`,
@@ -51,9 +57,9 @@ const getServicioByid = async(req, res)=> {
             msg:`El servicio fue encontrdo`
         })
     } catch (error) {
-        return res.status(404).json({
+        return res.status(500).json({
             ok:false,
-            msg: `No se encontro el servicio `
+            msg: `Error, contacta con el administrador `
         })
     }
 }
@@ -65,6 +71,12 @@ const putServicioByid = async(req, res)=> {
         //el update lo que hace es requerir el id y luego el json del body despues el new: truee devuelve el documento actualizado
         const ServicioActualizado = await Servicio.findOneAndUpdate({ id: req.params.id }, req.body, { new: true })
         //console.log(ServicioActualizado);
+        if(!ServicioActualizado){
+            return res.status(404).json({
+                ok:false,
+                msg: `No se encontro el servicio `
+            })
+        }
         return res.status(200).json({
             ok:true,
             msg: `se encontro el servicio`,
@@ -73,9 +85,9 @@ const putServicioByid = async(req, res)=> {
             data: ServicioActualizado
         })
     } catch (error) {
-        return res.status(404).json({
+        return res.status(500).json({
             ok:false,
-            msg: `No se encontro el servicio `
+            msg: `Error, contacta con el administrador `
         })
     }
 }
@@ -86,6 +98,12 @@ const deleteServicioByid = async(req, res)=> {
         //const ServicioEliminado = await Servicio.findByIdAndDelete(req.params.id)
         const ServicioEliminado = await Servicio.findOneAndDelete({ id: req.params.id })
         //console.log(ServicioEliminado);
+         if(!ServicioEliminado){
+            return res.status(404).json({
+                ok:false,
+                msg: `No se encontro el servicio `
+            })
+        }
         return res.status(200).json({
             ok:true,
             msg: `se encontro el servicio`,
@@ -94,9 +112,9 @@ const deleteServicioByid = async(req, res)=> {
             data: ServicioEliminado
         })
     } catch (error) {
-        return res.status(404).json({
+        return res.status(500).json({
             ok:false,
-            msg: `No se encontro el servicio `
+            msg: `Error, contacta con el administrador `
         })
     }
 }
