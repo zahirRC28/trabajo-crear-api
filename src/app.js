@@ -9,11 +9,11 @@ const port = process.env.PORT
 
 //MIDDLEWARE
 app.use(express.json());//uso esto para que el body reconosca bien los datos en el json
-app.use(express.urlencoded());
+
 
 //BBDD
 connection()
-    .then((resp)=> console.log(`Conexion con la base de datos exitosa`))
+    .then((resp)=> console.log(resp))
     .catch((error)=> console.log(error))
 //MODELWARE
 

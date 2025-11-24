@@ -13,7 +13,7 @@ const createServicio = async(req, res)=> {
             data: ServicioCreando
         })
     } catch (error) {
-        return res.status(404).json({
+        return res.status(500).json({
             ok:false,
             msg: `No se pudo crear al servicio `
         })
