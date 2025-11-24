@@ -9,6 +9,7 @@ const port = process.env.PORT
 
 //MIDDLEWARE
 app.use(express.json());//uso esto para que el body reconosca bien los datos en el json
+app.use(express.urlencoded());//para uso de formularios
 
 
 //BBDD
