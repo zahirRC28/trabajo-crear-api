@@ -14,7 +14,7 @@ app.use(express.urlencoded());//para uso de formularios
 
 //BBDD
 connection()
-    .then((resp)=> console.log(resp))
+    .then((resp)=> console.log(resp.msg))
     .catch((error)=> console.log(error))
 //MODELWARE
 
