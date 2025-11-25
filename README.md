@@ -29,6 +29,7 @@ Una API REST construida con **Node.js**, **Express** y **MongoDB** para gestiona
    - `mongoose` - ODM para MongoDB
    - `dotenv` - Gestión de variables de entorno
    - `daemon` - Reinicio automático del servidor(instalar si no lo tiene global)
+   - `express-validator` - comprobacion de datos con middleware
 
 ---
 

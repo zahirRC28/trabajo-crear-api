@@ -1,11 +1,11 @@
 const { Schema, model } = require('mongoose');
 
 const ServicioSchema = new Schema({
-    id:{
+    /*id:{
         type: Number,
         require: true,
         unique: true,
-    },
+    },*/
     nombre:{
         type: String,
         require: true,
@@ -18,6 +18,22 @@ const ServicioSchema = new Schema({
     precio:{
         type: Number,
         require: true,
+    },
+    correoContacto:{
+        type: String,
+        require: true
+    },
+    diaDescuento:{
+        type: Date,
+        require: true
+    },
+    telefonoContacto:{
+        type: Number,
+        require: true
+    },
+    estado:{
+        type: String,
+        require: true
     }
 })
 

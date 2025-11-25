@@ -15,7 +15,8 @@ const createServicio = async(req, res)=> {
     } catch (error) {
         return res.status(500).json({
             ok:false,
-            msg: `No se pudo crear al servicio `
+            msg: `No se pudo crear al servicio `,
+            error: error.message
         })
     }
 }
@@ -41,8 +42,8 @@ const getAllServicios = async(req, res)=> {
 //GET SERVICIOS BY ID
 const getServicioByid = async(req, res)=> {
     try {
-        //const ServicioEncontrado = await Servicio.findById(req.params.id) con esto buscamos el id nombar
-        const ServicioEncontrado = await Servicio.findOne({ id: req.params.id }) //con esto busco mi id personalizada
+        const ServicioEncontrado = await Servicio.findById(req.params.id) //con esto buscamos el id 
+        //const ServicioEncontrado = await Servicio.findOne({ id: req.params.id }) //con esto busco mi id personalizada
         //console.log(ServiciosEncontrado);
         if(!ServicioEncontrado){
             return res.status(404).json({
@@ -67,9 +68,10 @@ const getServicioByid = async(req, res)=> {
 //UPDATE SERVICIO BY ID
 const putServicioByid = async(req, res)=> {
     try {
-        //const ServicioActualizado = await Servicio.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        const ServicioActualizado = await Servicio.findByIdAndUpdate(req.params.id, req.body, { new: true })
         //el update lo que hace es requerir el id y luego el json del body despues el new: truee devuelve el documento actualizado
-        const ServicioActualizado = await Servicio.findOneAndUpdate({ id: req.params.id }, req.body, { new: true })
+        //con el one podemos coger otros parametros de ser necesarios
+        //const ServicioActualizado = await Servicio.findOneAndUpdate({ id: req.params.id }, req.body, { new: true })
         //console.log(ServicioActualizado);
         if(!ServicioActualizado){
             return res.status(404).json({
@@ -95,8 +97,8 @@ const putServicioByid = async(req, res)=> {
 //DELETE SERVICIO BY ID
 const deleteServicioByid = async(req, res)=> {
     try {
-        //const ServicioEliminado = await Servicio.findByIdAndDelete(req.params.id)
-        const ServicioEliminado = await Servicio.findOneAndDelete({ id: req.params.id })
+        const ServicioEliminado = await Servicio.findByIdAndDelete(req.params.id)
+        //const ServicioEliminado = await Servicio.findOneAndDelete({ id: req.params.id })
         //console.log(ServicioEliminado);
          if(!ServicioEliminado){
             return res.status(404).json({
